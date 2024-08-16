@@ -644,7 +644,7 @@ class _CreateNewOrderPageWidgetState extends State<CreateNewOrderPageWidget> {
                           ],
                           onChanged: (val) =>
                               setState(() => _model.enginetypeValue = val),
-                          height: 56.0,
+                          height: 70.0,
                           textStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Manrope',
