@@ -248,23 +248,29 @@ class _CreateNewOrderWidgetState extends State<CreateNewOrderWidget> {
                                                     alignment:
                                                         const AlignmentDirectional(
                                                             -1.0, 0.0),
-                                                    child: Text(
-                                                      listViewOrdersRecord
-                                                          .carmodel
-                                                          .maybeHandleOverflow(
-                                                        maxChars: 50,
-                                                        replacement: '…',
+                                                    child: Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Text(
+                                                        listViewOrdersRecord
+                                                            .carmodel
+                                                            .maybeHandleOverflow(
+                                                          maxChars: 50,
+                                                          replacement: '…',
+                                                        ),
+                                                        maxLines: 1,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Manrope',
+                                                              fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                            ),
                                                       ),
-                                                      maxLines: 3,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Manrope',
-                                                            fontSize: 16.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -275,34 +281,37 @@ class _CreateNewOrderWidgetState extends State<CreateNewOrderWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Align(
                                                 alignment: const AlignmentDirectional(
-                                                    1.0, 0.0),
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          10.0, 0.0, 0.0, 0.0),
-                                                  child: Container(
-                                                    width: 110.0,
-                                                    height: 100.0,
-                                                    constraints: const BoxConstraints(
-                                                      maxWidth: 110.0,
-                                                    ),
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                    ),
+                                                    0.0, 0.0),
+                                                child: Container(
+                                                  width: 110.0,
+                                                  height: 100.0,
+                                                  constraints: const BoxConstraints(
+                                                    maxWidth: 110.0,
+                                                  ),
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          1.0, 0.0),
+                                                  child: Align(
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                            1.0, 0.0),
+                                                            0.0, 0.0),
                                                     child: Text(
                                                       valueOrDefault<String>(
                                                         listViewOrdersRecord
                                                             .approved,
                                                         'В рассмотрении',
                                                       ),
+                                                      maxLines: 1,
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
