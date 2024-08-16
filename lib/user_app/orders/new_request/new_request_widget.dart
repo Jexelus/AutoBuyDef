@@ -66,7 +66,7 @@ class _NewRequestWidgetState extends State<NewRequestWidget> {
     return SafeArea(
       child: Container(
         width: double.infinity,
-        height: 1482.0,
+        height: MediaQuery.sizeOf(context).height * 1.2,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
           borderRadius: const BorderRadius.only(
