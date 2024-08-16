@@ -372,151 +372,83 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // CreateNewOrderPage
   {
-    'zpd67i7i': {
+    'hpvqeepj': {
+      'ru': 'Page Title',
+      'en': '',
+      'ko': '',
+    },
+    'wq7ey0hi': {
       'ru': 'Добавить фото\n(до 10 штук)',
       'en': '',
       'ko': '',
     },
-    'dnxmno9b': {
+    '8xco74ol': {
       'ru': 'Модель машины',
       'en': '',
       'ko': '',
     },
-    're82dreu': {
+    'me3600cl': {
       'ru': 'Год выпуска',
       'en': '',
       'ko': '',
     },
-    'ezhl92ye': {
+    'j4lt3vkr': {
       'ru': 'Пробег',
       'en': '',
       'ko': '',
     },
-    '9tqcfi6z': {
+    'v8jhibgf': {
       'ru': 'Бензин',
       'en': '',
       'ko': '',
     },
-    'd0dukzba': {
+    'z2xvchvg': {
       'ru': 'Дизель',
       'en': '',
       'ko': '',
     },
-    '5df6fz9g': {
+    'qgp53g1n': {
       'ru': 'Газ',
       'en': '',
       'ko': '',
     },
-    'hcj0hu59': {
+    'vwd1epvv': {
       'ru': 'Бензин',
       'en': '',
       'ko': '',
     },
-    'd3egs9kk': {
+    'wqdwlabv': {
       'ru': 'Пожалуйста, выберите',
       'en': '',
       'ko': '',
     },
-    'zzuypj03': {
+    'hlj6edfp': {
       'ru': 'Поиск',
       'en': '',
       'ko': '',
     },
-    'd9hdhscm': {
+    '2r8kgcyp': {
       'ru': 'Тип двигателя',
       'en': '',
       'ko': '',
     },
-    'b7jfrdss': {
+    'rdd6vbu1': {
       'ru': 'Объем двигателя',
       'en': '',
       'ko': '',
     },
-    'pusucc6g': {
+    '9gtrgssv': {
       'ru': 'Цвет кузова',
       'en': '',
       'ko': '',
     },
-    'is1ynt6o': {
+    'tobk6qg4': {
       'ru': 'Отправить заявку',
       'en': '',
       'ko': '',
     },
     '9pveqsmj': {
       'ru': 'Home',
-      'en': '',
-      'ko': '',
-    },
-  },
-  // NewRequest
-  {
-    'ptiwfh4r': {
-      'ru': 'Добавить фото\n(до 10 штук)',
-      'en': '',
-      'ko': '',
-    },
-    'sxu7f7bq': {
-      'ru': 'Модель машины',
-      'en': 'The model of car',
-      'ko': '',
-    },
-    '9nwjbcb2': {
-      'ru': 'Год выпуска',
-      'en': 'Year of issue',
-      'ko': '',
-    },
-    'lbi55ml0': {
-      'ru': 'Пробег',
-      'en': 'Car mileage',
-      'ko': '',
-    },
-    'praa0b7g': {
-      'ru': 'Бензин',
-      'en': '',
-      'ko': '',
-    },
-    '0g7c7h88': {
-      'ru': 'Дизель',
-      'en': '',
-      'ko': '',
-    },
-    'bmxwkb5t': {
-      'ru': 'Газ',
-      'en': '',
-      'ko': '',
-    },
-    '6u7s8c6u': {
-      'ru': 'Бензин',
-      'en': '',
-      'ko': '',
-    },
-    '2jhkmk0d': {
-      'ru': 'Пожалуйста, выберите',
-      'en': '',
-      'ko': '',
-    },
-    'wtf2gyo2': {
-      'ru': 'Поиск',
-      'en': '',
-      'ko': '',
-    },
-    'urslwy47': {
-      'ru': 'Тип двигателя',
-      'en': '',
-      'ko': '',
-    },
-    'adqjybdo': {
-      'ru': 'Объем двигателя',
-      'en': '',
-      'ko': '',
-    },
-    't64pmskg': {
-      'ru': 'Цвет кузова',
-      'en': '',
-      'ko': '',
-    },
-    'vvoeywy7': {
-      'ru': 'Отправить заявку',
       'en': '',
       'ko': '',
     },
