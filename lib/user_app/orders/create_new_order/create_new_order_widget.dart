@@ -70,9 +70,9 @@ class _CreateNewOrderWidgetState extends State<CreateNewOrderWidget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 14.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        if (!(currentUserEmail != '')) {
+                        if (!(currentPhoneNumber != '')) {
                           context.pushNamed(
-                            'Login',
+                            'PhoneLogin',
                             extra: <String, dynamic>{
                               kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,

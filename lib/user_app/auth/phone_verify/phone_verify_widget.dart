@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -71,7 +72,7 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget>
             curve: Curves.linear,
             delay: 180.0.ms,
             duration: 600.0.ms,
-            begin: 0.0,
+            begin: 1.0,
             end: 1.37,
           ),
         ],
@@ -365,15 +366,9 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget>
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              if (animationsMap[
-                                                      'buttonOnActionTriggerAnimation'] !=
-                                                  null) {
-                                                animationsMap[
-                                                        'buttonOnActionTriggerAnimation']!
-                                                    .controller
-                                                  ..reset()
-                                                  ..repeat();
-                                              }
+                                              unawaited(
+                                                () async {}(),
+                                              );
                                               GoRouter.of(context)
                                                   .prepareAuthEvent();
                                               final smsCodeVal = _model

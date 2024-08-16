@@ -235,6 +235,8 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
                                             autofillHints: const [
                                               AutofillHints.telephoneNumber
                                             ],
+                                            textCapitalization:
+                                                TextCapitalization.none,
                                             textInputAction:
                                                 TextInputAction.send,
                                             obscureText: false,
@@ -310,6 +312,9 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
                                             validator: _model
                                                 .phoneNumberTextControllerValidator
                                                 .asValidator(context),
+                                            inputFormatters: [
+                                              _model.phoneNumberMask
+                                            ],
                                           ),
                                         ),
                                       ),
