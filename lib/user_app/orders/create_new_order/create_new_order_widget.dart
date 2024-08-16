@@ -3,7 +3,6 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/user_app/orders/new_request/new_request_widget.dart';
 import '/user_app/orders/request/request_widget.dart';
 import 'package:flutter/material.dart';
 import 'create_new_order_model.dart';
@@ -82,21 +81,8 @@ class _CreateNewOrderWidgetState extends State<CreateNewOrderWidget> {
                             },
                           );
                         }
-                        await showModalBottomSheet(
-                          isScrollControlled: true,
-                          backgroundColor: Colors.transparent,
-                          enableDrag: false,
-                          context: context,
-                          builder: (context) {
-                            return GestureDetector(
-                              onTap: () => FocusScope.of(context).unfocus(),
-                              child: Padding(
-                                padding: MediaQuery.viewInsetsOf(context),
-                                child: const NewRequestWidget(),
-                              ),
-                            );
-                          },
-                        ).then((value) => safeSetState(() {}));
+
+                        context.pushNamed('CreateNewOrderPage');
                       },
                       text: FFLocalizations.of(context).getText(
                         'yjpkdja2' /* Создать заявку */,

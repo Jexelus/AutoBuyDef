@@ -136,6 +136,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'CreateNewOrderPage',
+          path: '/createNewOrderPage',
+          builder: (context, params) => const CreateNewOrderPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
