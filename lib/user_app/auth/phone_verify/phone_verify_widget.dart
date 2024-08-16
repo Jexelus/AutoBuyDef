@@ -63,7 +63,26 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget>
           ),
         ],
       ),
+      'buttonOnActionTriggerAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          SaturateEffect(
+            curve: Curves.linear,
+            delay: 180.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.37,
+          ),
+        ],
+      ),
     });
+    setupAnimations(
+      animationsMap.values.where((anim) =>
+          anim.trigger == AnimationTrigger.onActionTrigger ||
+          !anim.applyInitialState),
+      this,
+    );
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -346,6 +365,15 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget>
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
+                                              if (animationsMap[
+                                                      'buttonOnActionTriggerAnimation'] !=
+                                                  null) {
+                                                animationsMap[
+                                                        'buttonOnActionTriggerAnimation']!
+                                                    .controller
+                                                  ..reset()
+                                                  ..repeat();
+                                              }
                                               GoRouter.of(context)
                                                   .prepareAuthEvent();
                                               final smsCodeVal = _model
@@ -407,6 +435,9 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget>
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                             ),
+                                          ).animateOnActionTrigger(
+                                            animationsMap[
+                                                'buttonOnActionTriggerAnimation']!,
                                           ),
                                         ),
                                       ),
