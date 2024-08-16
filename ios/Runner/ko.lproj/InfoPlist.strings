@@ -1,0 +1,2 @@
+NSCameraUsageDescription = "카메라에 대한 액세스";
+NSPhotoLibraryUsageDescription = "갤러리에 대한 액세스";
