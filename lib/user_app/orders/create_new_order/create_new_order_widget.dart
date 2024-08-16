@@ -152,7 +152,6 @@ class _CreateNewOrderWidgetState extends State<CreateNewOrderWidget> {
 
                           return ListView.separated(
                             padding: const EdgeInsets.symmetric(vertical: 10.0),
-                            primary: false,
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: listViewOrdersRecordList.length,
