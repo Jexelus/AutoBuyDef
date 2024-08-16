@@ -261,7 +261,9 @@ class _CreateNewOrderWidgetState extends State<CreateNewOrderWidget> {
                                                           maxChars: 50,
                                                           replacement: '…',
                                                         ),
-                                                        maxLines: 1,
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        maxLines: 2,
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .bodyMedium
@@ -336,7 +338,9 @@ class _CreateNewOrderWidgetState extends State<CreateNewOrderWidget> {
                                                               .approved,
                                                           'В рассмотрении',
                                                         ),
-                                                        maxLines: 1,
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        maxLines: 2,
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .bodyMedium
