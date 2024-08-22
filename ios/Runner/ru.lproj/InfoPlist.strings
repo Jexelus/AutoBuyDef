@@ -1,1 +1,2 @@
-
+NSCameraUsageDescription = "Разрешите доступ к камере...";
+NSPhotoLibraryUsageDescription = "Разрешите доступ к галерее...";

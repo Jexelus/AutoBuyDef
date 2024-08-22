@@ -14,7 +14,7 @@ class PhoneLoginModel extends FlutterFlowModel<PhoneLoginWidget> {
   // State field(s) for phoneNumber widget.
   FocusNode? phoneNumberFocusNode;
   TextEditingController? phoneNumberTextController;
-  final phoneNumberMask = MaskTextInputFormatter(mask: '+# (###) ###-##-##');
+  final phoneNumberMask = MaskTextInputFormatter(mask: '+## ##-####-####');
   String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   UsersRecord? user;

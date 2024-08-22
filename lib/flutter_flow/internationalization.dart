@@ -106,7 +106,7 @@ Locale createLocale(String language) => language.contains('_')
     : Locale(language);
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
-  // CreateNewOrder
+  // Orders
   {
     't39u5i2w': {
       'ru': 'Мои заявки',
@@ -122,160 +122,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Заявки',
       'en': 'Applications',
       'ko': '응용',
-    },
-  },
-  // CreateAccount
-  {
-    '5rl0xq4p': {
-      'ru': 'AutoBuy',
-      'en': 'AutoBuy',
-      'ko': 'AutoBuy',
-    },
-    'w2hj9fdt': {
-      'ru': 'Создать аккаунт',
-      'en': 'Sign up',
-      'ko': '계정 만들기',
-    },
-    'x5v02gyr': {
-      'ru': 'Заполните ваши данные, чтобы создать учётную запись',
-      'en': 'Fill in your details to create an account',
-      'ko': '계정을 만들려면 세부 정보를 입력하세요.',
-    },
-    'h049yf63': {
-      'ru': 'Номер телефона',
-      'en': '',
-      'ko': '',
-    },
-    'ktm4857l': {
-      'ru': 'Email',
-      'en': 'Email',
-      'ko': 'Email',
-    },
-    'j5xofn0w': {
-      'ru': 'Имя профиля',
-      'en': 'Prifile name',
-      'ko': '프로필 이름',
-    },
-    'quuquviq': {
-      'ru': 'Пароль',
-      'en': 'Password',
-      'ko': '비밀번호',
-    },
-    'dr0ukhl2': {
-      'ru': 'Подтвердите пароль',
-      'en': 'Confirm password',
-      'ko': '비밀번호를 확인하세요',
-    },
-    'q7fyxhze': {
-      'ru': 'Создать аккаунт',
-      'en': 'Create account',
-      'ko': '계정 만들기',
-    },
-    '7x4y261i': {
-      'ru': 'Уже зарегистрированы? ',
-      'en': 'Already registered?',
-      'ko': '이미 등록?',
-    },
-    'zhpel6yr': {
-      'ru': 'Войдите здесь',
-      'en': 'Login here',
-      'ko': '여기에 로그인하세요',
-    },
-    '3i2mmp5d': {
-      'ru': 'Домой',
-      'en': 'Home',
-      'ko': '집',
-    },
-  },
-  // Login
-  {
-    'cz07m05i': {
-      'ru': 'AutoBuy',
-      'en': 'AutoBuy',
-      'ko': 'AutoBuy',
-    },
-    '736gednw': {
-      'ru': 'Вход',
-      'en': 'Sign in',
-      'ko': '안으로',
-    },
-    'r0f7h1mz': {
-      'ru': 'Введите ваши данные, чтобы продолжить',
-      'en': 'Enter your details to continue',
-      'ko': '계속하려면 세부정보를 입력하세요',
-    },
-    'o1oqc8ao': {
-      'ru': 'Email',
-      'en': 'Email',
-      'ko': 'Email',
-    },
-    'kgypic30': {
-      'ru': 'Пароль',
-      'en': 'Password',
-      'ko': '비밀번호',
-    },
-    'o7vvf7sb': {
-      'ru': 'Войти',
-      'en': 'Log in',
-      'ko': '안으로',
-    },
-    '6f08hvb1': {
-      'ru': 'Ещё не зарегистрированы? ',
-      'en': 'Not registered yet?',
-      'ko': '아직 등록하지 않으셨나요?',
-    },
-    'fm5qm78p': {
-      'ru': 'Создайте учётную запись',
-      'en': 'Create an account',
-      'ko': '계정 만들기',
-    },
-    '3p6oyw16': {
-      'ru': 'Забыли пароль? ',
-      'en': 'Forgot your password?',
-      'ko': '비밀번호를 잊어 버렸습니까?',
-    },
-    'bxu44a0p': {
-      'ru': 'Сбросьте с помощью Email',
-      'en': 'Reset using Email',
-      'ko': '이메일을 사용하여 재설정',
-    },
-    'hxcno2ba': {
-      'ru': 'Домой',
-      'en': 'Home',
-      'ko': '집',
-    },
-  },
-  // ForgotPassword
-  {
-    'rz5129ch': {
-      'ru': 'AutoBuy',
-      'en': 'AutoBuy',
-      'ko': 'AutoBuy',
-    },
-    '2g0beb9b': {
-      'ru': 'Забыли пароль?',
-      'en': 'Forgot your password?',
-      'ko': '비밀번호를 잊어 버렸습니까?',
-    },
-    'eaoo1woe': {
-      'ru': 'Введите ваш email для восстановления аккаунта',
-      'en': 'Enter your email to recover your account',
-      'ko': '계정을 복구하려면 이메일을 입력하세요',
-    },
-    'lg6ynns6': {
-      'ru': 'Введите ваш email',
-      'en': '',
-      'ko': '',
-    },
-    '10cwqazw': {
-      'ru': 'Восстановить',
-      'en': 'Recover',
-      'ko': '복원하다',
-    },
-    'se5w3jt1': {
-      'ru': 'Домой',
-      'en': 'Home',
-      'ko': '집',
     },
   },
   // Profile
@@ -300,291 +146,311 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     's1qapfhf': {
       'ru': 'Введите ваше сообщение...',
-      'en': '',
-      'ko': '',
+      'en': 'Enter your message...',
+      'ko': '메시지를 입력하세요...',
     },
     'lhq1q012': {
-      'ru': 'Home',
-      'en': '',
-      'ko': '',
+      'ru': 'Домой',
+      'en': 'Home',
+      'ko': '집',
     },
   },
   // PhoneLogin
   {
     '8exyvrb6': {
       'ru': 'AutoBuy',
-      'en': '',
-      'ko': '',
+      'en': 'AutoBuy',
+      'ko': 'AutoBuy',
     },
     '7oo5161m': {
       'ru': 'Вход | Регистрация',
-      'en': '',
-      'ko': '',
+      'en': 'Login | Register',
+      'ko': '로그인 | 등록',
     },
     'ro99rnw0': {
       'ru': 'Введите ваши данные, чтобы продолжить',
-      'en': '',
-      'ko': '',
+      'en': 'Please enter your details to continue.',
+      'ko': '계속하려면 세부정보를 입력하세요.',
     },
     'lnca8gc2': {
       'ru': 'Номер телефона',
-      'en': '',
-      'ko': '',
+      'en': 'Phone number',
+      'ko': '전화 번호',
     },
     'i4q35lon': {
       'ru': 'Продолжить',
-      'en': '',
-      'ko': '',
+      'en': 'Continue',
+      'ko': '계속하다',
     },
-    '5iy628t0': {
+    '3i2mmp5d': {
       'ru': 'Home',
-      'en': '',
-      'ko': '',
+      'en': 'Home',
+      'ko': '집',
     },
   },
   // PhoneVerify
   {
-    'tmnm9udk': {
+    '5rl0xq4p': {
       'ru': 'AutoBuy',
-      'en': '',
-      'ko': '',
+      'en': 'AutoBuy',
+      'ko': 'AutoBuy',
     },
     'tc6lfd4l': {
       'ru': 'Код верификации',
-      'en': '',
-      'ko': '',
+      'en': 'Verification code',
+      'ko': '인증코드',
     },
     'nanauz73': {
       'ru': 'Введите 6-и значный код подтверждения отправленный на номер ',
-      'en': '',
-      'ko': '',
+      'en': 'Enter the 6-digit confirmation code sent to the number',
+      'ko': '해당번호로 전송된 확인코드 6자리를 입력하세요.',
     },
     '1iuyqd9h': {
       'ru': 'Подтвердить',
-      'en': '',
-      'ko': '',
+      'en': 'Confirm',
+      'ko': '확인하다',
     },
-    'f3n0x68e': {
-      'ru': 'Home',
-      'en': '',
-      'ko': '',
+    'hxcno2ba': {
+      'ru': 'Домой',
+      'en': 'Home',
+      'ko': '집',
     },
   },
-  // CreateNewOrderPage
+  // CreateOrder
   {
     'hpvqeepj': {
-      'ru': 'Page Title',
-      'en': '',
-      'ko': '',
+      'ru': 'Создание заявки',
+      'en': 'Create an application',
+      'ko': '애플리케이션 만들기',
     },
     'wq7ey0hi': {
       'ru': 'Добавить фото\n(до 10 штук)',
-      'en': '',
-      'ko': '',
+      'en': 'Add photos\n(up to 10)',
+      'ko': '사진 추가\n(최대 10개)',
     },
     '8xco74ol': {
       'ru': 'Модель машины',
-      'en': '',
-      'ko': '',
+      'en': 'Car model',
+      'ko': '자동차 모델',
     },
     'me3600cl': {
       'ru': 'Год выпуска',
-      'en': '',
-      'ko': '',
+      'en': 'Year of issue',
+      'ko': '발행 연도',
     },
     'j4lt3vkr': {
       'ru': 'Пробег',
-      'en': '',
-      'ko': '',
+      'en': 'Mileage',
+      'ko': '사용량',
     },
     'v8jhibgf': {
       'ru': 'Бензин',
-      'en': '',
-      'ko': '',
+      'en': 'Petrol',
+      'ko': '가솔린',
     },
     'z2xvchvg': {
       'ru': 'Дизель',
-      'en': '',
-      'ko': '',
+      'en': 'Diesel',
+      'ko': '디젤',
     },
     'qgp53g1n': {
       'ru': 'Газ',
-      'en': '',
-      'ko': '',
+      'en': 'Gas',
+      'ko': '가스',
     },
     'vwd1epvv': {
       'ru': 'Бензин',
-      'en': '',
-      'ko': '',
+      'en': 'Petrol',
+      'ko': '가솔린',
     },
     'wqdwlabv': {
       'ru': 'Пожалуйста, выберите',
-      'en': '',
-      'ko': '',
+      'en': 'Please select',
+      'ko': '선택하세요',
     },
     'hlj6edfp': {
       'ru': 'Поиск',
-      'en': '',
-      'ko': '',
+      'en': 'Search',
+      'ko': '포이스크',
     },
     '2r8kgcyp': {
       'ru': 'Тип двигателя',
-      'en': '',
-      'ko': '',
+      'en': 'Engine type',
+      'ko': '엔진 유형',
     },
     'rdd6vbu1': {
       'ru': 'Объем двигателя',
-      'en': '',
-      'ko': '',
+      'en': 'Engine capacity',
+      'ko': '엔진 크기',
     },
     '9gtrgssv': {
       'ru': 'Цвет кузова',
-      'en': '',
-      'ko': '',
+      'en': 'Body color',
+      'ko': '바디 컬러',
     },
     'tobk6qg4': {
       'ru': 'Отправить заявку',
-      'en': '',
-      'ko': '',
+      'en': 'Submit request',
+      'ko': '요청 보내기',
     },
-    '9pveqsmj': {
+    'f3n0x68e': {
       'ru': 'Home',
-      'en': '',
-      'ko': '',
+      'en': 'Home',
+      'ko': '집',
     },
   },
   // Request
   {
-    'hueurji7': {
+    'u5mymk03': {
       'ru': 'Модель машины:',
-      'en': '',
-      'ko': '',
+      'en': 'Car model:',
+      'ko': '자동차 모델:',
     },
-    '9h1gz5bb': {
+    'rbmljl4i': {
       'ru': 'Состояние заявки:',
-      'en': '',
-      'ko': '',
+      'en': 'Application status:',
+      'ko': '신청 상태:',
     },
-    'ti3kjf3l': {
-      'ru': 'При возникновении вопросов:',
-      'en': '',
-      'ko': '',
+    '3apw77x3': {
+      'ru':
+          'Администратор ответит в течение нескольких часов.\nПри возникновении вопросов:',
+      'en':
+          'The administrator will respond within a few hours. If you have any questions:',
+      'ko': '관리자가 몇 시간 내에 응답할 것입니다. 질문이 있는 경우:',
     },
-    'zvxcbqy9': {
+    'cglilglu': {
       'ru': 'Звонок',
-      'en': '',
-      'ko': '',
+      'en': 'Call',
+      'ko': '부르다',
     },
-    '312cer0f': {
+    'uydd6e0b': {
       'ru': 'Сообщение',
-      'en': '',
-      'ko': '',
+      'en': 'Message',
+      'ko': '참여',
     },
-    'c5flm84n': {
+    '6ehnlu2s': {
       'ru': 'WhatsApp',
-      'en': '',
-      'ko': '',
+      'en': 'WhatsApp',
+      'ko': 'WhatsApp',
     },
-    '687yk0ml': {
+    'y3b6ctod': {
       'ru': 'Перейти в чат',
-      'en': '',
-      'ko': '',
+      'en': 'To chat',
+      'ko': '채팅으로 이동',
     },
-    'lskawpwv': {
+    '7tl2js9o': {
       'ru': 'Удалить',
-      'en': '',
-      'ko': '',
+      'en': 'Delete',
+      'ko': '삭제',
     },
-    'tg7bijna': {
+    'xz12kzih': {
       'ru': 'Поле обязательно для заполнения',
-      'en': '',
-      'ko': '',
+      'en': 'This field is required',
+      'ko': '이 필드는 필수입니다',
     },
-    'esni7d8k': {
+    'nh2xo3is': {
       'ru': 'Пожалуйста, выберите',
-      'en': '',
-      'ko': '',
+      'en': 'Please select',
+      'ko': '선택하세요',
     },
-    'c0wmae6y': {
+    '04dajo4c': {
       'ru': 'Поле обязательно для заполнения',
-      'en': '',
-      'ko': '',
+      'en': 'This field is required',
+      'ko': '이 필드는 필수입니다',
     },
-    'llbxocwu': {
+    'x71z1h7k': {
       'ru': 'Пожалуйста, выберите',
-      'en': '',
-      'ko': '',
+      'en': 'Please select',
+      'ko': '선택하세요',
     },
-    '3sum2uo5': {
+    '5lv4criu': {
       'ru': 'Поле обязательно для заполнения',
-      'en': '',
-      'ko': '',
+      'en': 'This field is required',
+      'ko': '이 필드는 필수입니다',
     },
-    'rs2niu87': {
+    'hhg33087': {
       'ru': 'Пожалуйста, выберите',
-      'en': '',
-      'ko': '',
+      'en': 'Please select',
+      'ko': '선택하세요',
     },
-    '0yny6xc9': {
+    'f3wpxcy2': {
       'ru': 'Поле обязательно для заполнения',
-      'en': '',
-      'ko': '',
+      'en': 'This field is required',
+      'ko': '이 필드는 필수입니다',
     },
-    't8in7zsi': {
+    'pryct24f': {
       'ru': 'Пожалуйста, выберите',
-      'en': '',
-      'ko': '',
+      'en': 'Please select',
+      'ko': '선택하세요',
     },
-    '2vwfjxme': {
+    'ydxwa6i8': {
       'ru': 'Поле обязательно для заполнения',
-      'en': '',
-      'ko': '',
+      'en': 'This field is required',
+      'ko': '이 필드는 필수입니다',
     },
-    '00qvqydr': {
+    'oih23eri': {
       'ru': 'Пожалуйста, выберите',
-      'en': '',
-      'ko': '',
+      'en': 'Please select',
+      'ko': '선택하세요',
     },
-    'cqt66zw9': {
+    'kftcw1xl': {
       'ru': 'Поле обязательно для заполнения',
-      'en': '',
-      'ko': '',
+      'en': 'This field is required',
+      'ko': '이 필드는 필수입니다',
     },
-    'rlps81el': {
+    'v20doi7l': {
       'ru': 'Пожалуйста, выберите',
-      'en': '',
-      'ko': '',
+      'en': 'Please select',
+      'ko': '선택하세요',
     },
-    'f3qb7nx9': {
+    'bcmr29vd': {
       'ru': 'Поле обязательно для заполнения',
-      'en': '',
-      'ko': '',
+      'en': 'This field is required',
+      'ko': '이 필드는 필수입니다',
     },
-    'zn22g9n3': {
+    'u4xfxco0': {
       'ru': 'Пожалуйста, выберите',
-      'en': '',
-      'ko': '',
+      'en': 'Please select',
+      'ko': '선택하세요',
     },
-    '7jssacvz': {
+    'r2ognyaa': {
       'ru': 'Поле обязательно для заполнения',
-      'en': '',
-      'ko': '',
+      'en': 'This field is required',
+      'ko': '이 필드는 필수입니다',
     },
-    'mry8rf7h': {
+    '4ram4fao': {
       'ru': 'Пожалуйста, выберите',
-      'en': '',
-      'ko': '',
+      'en': 'Please select',
+      'ko': '선택하세요',
+    },
+    'se5w3jt1': {
+      'ru': 'Домой',
+      'en': 'Home',
+      'ko': '집',
+    },
+  },
+  // UpdateNameOfUser
+  {
+    '1n0jnsxt': {
+      'ru': 'Ваше имя',
+      'en': 'Your name',
+      'ko': '당신의 이름',
+    },
+    'gmosb337': {
+      'ru': 'Сохранить',
+      'en': 'Save',
+      'ko': '구하다',
     },
   },
   // Miscellaneous
   {
     '6a0wzji8': {
-      'ru': '',
+      'ru': 'Разрешите доступ к камере...',
       'en': 'Access to the camera',
       'ko': '카메라에 대한 액세스',
     },
     'nj8nfh5w': {
-      'ru': '',
+      'ru': 'Разрешите доступ к галерее...',
       'en': 'Access to the gallery',
       'ko': '갤러리에 대한 액세스',
     },

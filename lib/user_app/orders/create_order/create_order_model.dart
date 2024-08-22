@@ -1,11 +1,14 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'create_new_order_page_widget.dart' show CreateNewOrderPageWidget;
+import 'create_order_widget.dart' show CreateOrderWidget;
 import 'package:flutter/material.dart';
 
-class CreateNewOrderPageModel
-    extends FlutterFlowModel<CreateNewOrderPageWidget> {
+class CreateOrderModel extends FlutterFlowModel<CreateOrderWidget> {
+  ///  Local state fields for this page.
+
+  String? newOrderId;
+
   ///  State fields for stateful widgets in this page.
 
   bool isDataUploading1 = false;

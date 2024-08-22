@@ -82,26 +82,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? const NavBarPage() : const PhoneLoginWidget(),
         ),
         FFRoute(
-          name: 'CreateNewOrder',
+          name: 'Orders',
           path: '/createNewOrder',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'CreateNewOrder')
-              : const CreateNewOrderWidget(),
-        ),
-        FFRoute(
-          name: 'CreateAccount',
-          path: '/createAccount',
-          builder: (context, params) => const CreateAccountWidget(),
-        ),
-        FFRoute(
-          name: 'Login',
-          path: '/login',
-          builder: (context, params) => const LoginWidget(),
-        ),
-        FFRoute(
-          name: 'ForgotPassword',
-          path: '/forgotPassword',
-          builder: (context, params) => const ForgotPasswordWidget(),
+              ? const NavBarPage(initialPage: 'Orders')
+              : const OrdersWidget(),
         ),
         FFRoute(
           name: 'Profile',
@@ -114,11 +99,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ChatPage',
           path: '/chatPage',
           builder: (context, params) => ChatPageWidget(
-            receiveChat: params.getParam(
-              'receiveChat',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['chats'],
+            orderId: params.getParam(
+              'orderId',
+              ParamType.String,
             ),
           ),
         ),
@@ -138,9 +121,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'CreateNewOrderPage',
-          path: '/createNewOrderPage',
-          builder: (context, params) => const CreateNewOrderPageWidget(),
+          name: 'CreateOrder',
+          path: '/createOrder',
+          builder: (context, params) => const CreateOrderWidget(),
+        ),
+        FFRoute(
+          name: 'Request',
+          path: '/request',
+          builder: (context, params) => RequestWidget(
+            orderID: params.getParam(
+              'orderID',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

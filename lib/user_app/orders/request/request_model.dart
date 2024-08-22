@@ -1,10 +1,9 @@
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'request_widget.dart' show RequestWidget;
 import 'package:flutter/material.dart';
 
 class RequestModel extends FlutterFlowModel<RequestWidget> {
-  ///  State fields for stateful widgets in this component.
+  ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
   // State field(s) for TextField widget.
@@ -15,8 +14,6 @@ class RequestModel extends FlutterFlowModel<RequestWidget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  UsersRecord? adminRef;
 
   @override
   void initState(BuildContext context) {}

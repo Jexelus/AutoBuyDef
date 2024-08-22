@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:async';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -107,33 +106,6 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget>
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              if (responsiveVisibility(
-                context: context,
-                phone: false,
-                tablet: false,
-              ))
-                Expanded(
-                  flex: 5,
-                  child: Align(
-                    alignment: const AlignmentDirectional(0.0, -1.0),
-                    child: Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            FlutterFlowTheme.of(context).primaryBackground,
-                            FlutterFlowTheme.of(context).accent1
-                          ],
-                          stops: const [0.0, 1.0],
-                          begin: const AlignmentDirectional(1.0, 0.0),
-                          end: const AlignmentDirectional(-1.0, 0),
-                        ),
-                        borderRadius: BorderRadius.circular(0.0),
-                      ),
-                    ),
-                  ),
-                ),
               Expanded(
                 flex: 5,
                 child: Align(
@@ -192,7 +164,7 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget>
                                       ),
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          'tmnm9udk' /* AutoBuy */,
+                                          '5rl0xq4p' /* AutoBuy */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
@@ -339,15 +311,6 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget>
                                           selectedColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondary,
-                                          activeFillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
-                                          inactiveFillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          selectedFillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondary,
                                         ),
                                         controller: _model.pinCodeController,
                                         onChanged: (_) {},
@@ -359,16 +322,13 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, -1.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              unawaited(
-                                                () async {}(),
-                                              );
                                               GoRouter.of(context)
                                                   .prepareAuthEvent();
                                               final smsCodeVal = _model
@@ -406,7 +366,7 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget>
                                             ),
                                             options: FFButtonOptions(
                                               width: 200.0,
-                                              height: 44.0,
+                                              height: 46.0,
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional

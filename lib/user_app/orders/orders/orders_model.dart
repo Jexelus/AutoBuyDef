@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'create_new_order_widget.dart' show CreateNewOrderWidget;
+import 'orders_widget.dart' show OrdersWidget;
 import 'package:flutter/material.dart';
 
-class CreateNewOrderModel extends FlutterFlowModel<CreateNewOrderWidget> {
+class OrdersModel extends FlutterFlowModel<OrdersWidget> {
   @override
   void initState(BuildContext context) {}
 

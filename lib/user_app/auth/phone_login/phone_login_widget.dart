@@ -86,33 +86,6 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              if (responsiveVisibility(
-                context: context,
-                phone: false,
-                tablet: false,
-              ))
-                Expanded(
-                  flex: 5,
-                  child: Align(
-                    alignment: const AlignmentDirectional(0.0, -1.0),
-                    child: Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            FlutterFlowTheme.of(context).primaryBackground,
-                            FlutterFlowTheme.of(context).accent1
-                          ],
-                          stops: const [0.0, 1.0],
-                          begin: const AlignmentDirectional(1.0, 0.0),
-                          end: const AlignmentDirectional(-1.0, 0),
-                        ),
-                        borderRadius: BorderRadius.circular(0.0),
-                      ),
-                    ),
-                  ),
-                ),
               Expanded(
                 flex: 5,
                 child: Align(
@@ -320,7 +293,7 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, -1.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
@@ -402,7 +375,7 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
                                             ),
                                             options: FFButtonOptions(
                                               width: 200.0,
-                                              height: 44.0,
+                                              height: 46.0,
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional

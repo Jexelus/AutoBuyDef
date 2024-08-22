@@ -50,3 +50,19 @@ List<String> oncatenationOfNamesAdminAndUser(
 ) {
   return [authUserName, adminUserName];
 }
+
+List<DocumentReference> generateListOfUsers(
+  DocumentReference authUser,
+  DocumentReference otherUser,
+) {
+  return [authUser, otherUser];
+}
+
+DocumentReference getOtherUserRef(
+  List<DocumentReference> listOfUserRefs,
+  DocumentReference authUserRef,
+) {
+  return authUserRef == listOfUserRefs.first
+      ? listOfUserRefs.last
+      : listOfUserRefs.first;
+}
