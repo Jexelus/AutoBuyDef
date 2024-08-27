@@ -154,13 +154,13 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                   snapshot.data!;
 
                               return ListView.separated(
-                                padding: const EdgeInsets.symmetric(vertical: 4.0),
+                                padding: const EdgeInsets.symmetric(vertical: 12.0),
                                 primary: false,
                                 shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
                                 itemCount: listViewOrdersRecordList.length,
                                 separatorBuilder: (_, __) =>
-                                    const SizedBox(height: 4.0),
+                                    const SizedBox(height: 12.0),
                                 itemBuilder: (context, listViewIndex) {
                                   final listViewOrdersRecord =
                                       listViewOrdersRecordList[listViewIndex];

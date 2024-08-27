@@ -532,7 +532,7 @@ class _RequestWidgetState extends State<RequestWidget> {
                                                 0.3,
                                         height: 46.0,
                                         decoration: BoxDecoration(
-                                          color: const Color(0xFF00A06E),
+                                          color: const Color(0xFF00C59F),
                                           borderRadius:
                                               BorderRadius.circular(6.0),
                                         ),

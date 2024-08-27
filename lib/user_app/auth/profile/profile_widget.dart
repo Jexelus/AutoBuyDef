@@ -68,23 +68,49 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     ),
               ),
               actions: [
-                Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: Switch.adaptive(
-                    value: _model.switchValue!,
-                    onChanged: (newValue) async {
-                      setState(() => _model.switchValue = newValue);
-                      if (newValue) {
-                        setDarkModeSetting(context, ThemeMode.dark);
-                      } else {
-                        setDarkModeSetting(context, ThemeMode.light);
-                      }
-                    },
-                    activeColor: FlutterFlowTheme.of(context).info,
-                    activeTrackColor: FlutterFlowTheme.of(context).primary,
-                    inactiveTrackColor: FlutterFlowTheme.of(context).info,
-                    inactiveThumbColor: FlutterFlowTheme.of(context).primary,
-                  ),
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text(
+                          FFLocalizations.of(context).getText(
+                            'ybdvs5ap' /* Сменить тему */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Manrope',
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: Switch.adaptive(
+                            value: _model.switchValue!,
+                            onChanged: (newValue) async {
+                              setState(() => _model.switchValue = newValue);
+                              if (newValue) {
+                                setDarkModeSetting(context, ThemeMode.dark);
+                              } else {
+                                setDarkModeSetting(context, ThemeMode.light);
+                              }
+                            },
+                            activeColor: FlutterFlowTheme.of(context).info,
+                            activeTrackColor:
+                                FlutterFlowTheme.of(context).primary,
+                            inactiveTrackColor:
+                                FlutterFlowTheme.of(context).info,
+                            inactiveThumbColor:
+                                FlutterFlowTheme.of(context).primary,
+                          ),
+                        ),
+                      ]
+                          .divide(const SizedBox(width: 12.0))
+                          .around(const SizedBox(width: 12.0)),
+                    ),
+                  ],
                 ),
               ],
               centerTitle: false,

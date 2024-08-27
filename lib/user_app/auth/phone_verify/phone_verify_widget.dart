@@ -280,7 +280,7 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget>
                                             ),
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
-                                        enableActiveFill: true,
+                                        enableActiveFill: false,
                                         autoFocus: true,
                                         enablePinAutofill: true,
                                         errorTextSpace: 16.0,

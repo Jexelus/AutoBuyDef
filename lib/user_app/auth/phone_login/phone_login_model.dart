@@ -11,6 +11,7 @@ class PhoneLoginModel extends FlutterFlowModel<PhoneLoginWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for phoneNumber widget.
   FocusNode? phoneNumberFocusNode;
   TextEditingController? phoneNumberTextController;

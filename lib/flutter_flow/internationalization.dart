@@ -136,6 +136,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Profile',
       'ko': '프로필',
     },
+    'ybdvs5ap': {
+      'ru': 'Сменить тему',
+      'en': '',
+      'ko': '',
+    },
     'm4btj391': {
       'ru': 'Профиль',
       'en': 'Profile',
