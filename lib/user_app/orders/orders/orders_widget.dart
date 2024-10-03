@@ -24,7 +24,7 @@ class _OrdersWidgetState extends State<OrdersWidget> {
     super.initState();
     _model = createModel(context, () => OrdersModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -68,19 +68,6 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        if (!(currentPhoneNumber != '')) {
-                          context.pushNamed(
-                            'PhoneLogin',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: const TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                              ),
-                            },
-                          );
-                        }
-
                         context.pushNamed('CreateOrder');
                       },
                       text: FFLocalizations.of(context).getText(

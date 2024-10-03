@@ -6,9 +6,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import '/user_app/auth/update_name_of_user/update_name_of_user_widget.dart';
+import '/user_app/orders/profile_info/profile_info_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'profile_model.dart';
 export 'profile_model.dart';
 
@@ -29,8 +30,15 @@ class _ProfileWidgetState extends State<ProfileWidget> {
     super.initState();
     _model = createModel(context, () => ProfileModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await currentUserReference!.update(createUsersRecordData(
+        uid: currentUserUid,
+      ));
+    });
+
     _model.switchValue = true;
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -70,9 +78,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
               actions: [
                 Column(
                   mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           FFLocalizations.of(context).getText(
@@ -81,6 +91,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Manrope',
+                                    color: FlutterFlowTheme.of(context).info,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -90,7 +101,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           child: Switch.adaptive(
                             value: _model.switchValue!,
                             onChanged: (newValue) async {
-                              setState(() => _model.switchValue = newValue);
+                              safeSetState(
+                                  () => _model.switchValue = newValue);
                               if (newValue) {
                                 setDarkModeSetting(context, ThemeMode.dark);
                               } else {
@@ -146,7 +158,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               if (selectedMedia != null &&
                                   selectedMedia.every((m) => validateFileFormat(
                                       m.storagePath, context))) {
-                                setState(() => _model.isDataUploading = true);
+                                safeSetState(
+                                    () => _model.isDataUploading = true);
                                 var selectedUploadedFiles = <FFUploadedFile>[];
 
                                 var downloadUrls = <String>[];
@@ -177,13 +190,13 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         selectedMedia.length &&
                                     downloadUrls.length ==
                                         selectedMedia.length) {
-                                  setState(() {
+                                  safeSetState(() {
                                     _model.uploadedLocalFile =
                                         selectedUploadedFiles.first;
                                     _model.uploadedFileUrl = downloadUrls.first;
                                   });
                                 } else {
-                                  setState(() {});
+                                  safeSetState(() {});
                                   return;
                                 }
                               }
@@ -242,7 +255,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.3,
-                                        child: const UpdateNameOfUserWidget(),
+                                        child: const ProfileInfoWidget(),
                                       ),
                                     ),
                                   );
@@ -258,9 +271,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                   alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      currentUserDisplayName != ''
-                                          ? currentUserDisplayName
-                                          : currentPhoneNumber,
+                                      valueOrDefault<String>(
+                                        currentUserDisplayName != ''
+                                            ? currentUserDisplayName
+                                            : currentPhoneNumber,
+                                        'Новый пользователь',
+                                      ),
                                       textAlign: TextAlign.center,
                                       maxLines: 3,
                                       style: FlutterFlowTheme.of(context)
@@ -300,7 +316,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               GoRouter.of(context).clearRedirectLocation();
 
                               context.goNamedAuth(
-                                  'PhoneLogin', context.mounted);
+                                  'Registration', context.mounted);
                             },
                             text: FFLocalizations.of(context).getText(
                               'n5kyb2n4' /* Выйти из профиля */,

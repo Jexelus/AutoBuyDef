@@ -72,13 +72,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const PhoneLoginWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const RegistrationWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const PhoneLoginWidget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const RegistrationWidget(),
         ),
         FFRoute(
           name: 'Orders',
@@ -105,19 +105,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'PhoneLogin',
-          path: '/phoneLogin',
-          builder: (context, params) => const PhoneLoginWidget(),
-        ),
-        FFRoute(
-          name: 'PhoneVerify',
-          path: '/phoneVerify',
-          builder: (context, params) => PhoneVerifyWidget(
-            phoneNumber: params.getParam(
-              'phoneNumber',
-              ParamType.String,
-            ),
-          ),
+          name: 'Login',
+          path: '/login',
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
           name: 'CreateOrder',
@@ -133,6 +123,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'Registration',
+          path: '/registration',
+          builder: (context, params) => const RegistrationWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -303,7 +298,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/phoneLogin';
+            return '/registration';
           }
           return null;
         },

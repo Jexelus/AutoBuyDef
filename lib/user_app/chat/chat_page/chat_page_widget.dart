@@ -77,14 +77,14 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
           ),
         });
 
-        setState(() {});
+        safeSetState(() {});
       }
     });
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -470,7 +470,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textController',
                                       const Duration(milliseconds: 0),
-                                      () => setState(() {}),
+                                      () => safeSetState(() {}),
                                     ),
                                     autofocus: true,
                                     obscureText: false,
@@ -598,7 +598,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                                               },
                                             ),
                                           });
-                                          setState(() {
+                                          safeSetState(() {
                                             _model.textController?.clear();
                                           });
                                         },

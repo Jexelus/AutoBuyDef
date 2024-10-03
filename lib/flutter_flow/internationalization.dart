@@ -160,7 +160,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ko': '집',
     },
   },
-  // PhoneLogin
+  // Login
   {
     '8exyvrb6': {
       'ru': 'AutoBuy',
@@ -168,7 +168,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ko': 'AutoBuy',
     },
     '7oo5161m': {
-      'ru': 'Вход | Регистрация',
+      'ru': 'Вход',
       'en': 'Login | Register',
       'ko': '로그인 | 등록',
     },
@@ -178,45 +178,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ko': '계속하려면 세부정보를 입력하세요.',
     },
     'lnca8gc2': {
-      'ru': 'Номер телефона',
+      'ru': 'Email',
       'en': 'Phone number',
       'ko': '전화 번호',
+    },
+    'gdytc864': {
+      'ru': 'Пароль',
+      'en': '',
+      'ko': '',
     },
     'i4q35lon': {
       'ru': 'Продолжить',
       'en': 'Continue',
       'ko': '계속하다',
     },
+    '8qlxtc8b': {
+      'ru': 'Еще нет аккаунта? ',
+      'en': '',
+      'ko': '',
+    },
+    'j4ez3qkb': {
+      'ru': 'Зарегистрируйтесь',
+      'en': '',
+      'ko': '',
+    },
     '3i2mmp5d': {
       'ru': 'Home',
-      'en': 'Home',
-      'ko': '집',
-    },
-  },
-  // PhoneVerify
-  {
-    '5rl0xq4p': {
-      'ru': 'AutoBuy',
-      'en': 'AutoBuy',
-      'ko': 'AutoBuy',
-    },
-    'tc6lfd4l': {
-      'ru': 'Код верификации',
-      'en': 'Verification code',
-      'ko': '인증코드',
-    },
-    'nanauz73': {
-      'ru': 'Введите 6-и значный код подтверждения отправленный на номер ',
-      'en': 'Enter the 6-digit confirmation code sent to the number',
-      'ko': '해당번호로 전송된 확인코드 6자리를 입력하세요.',
-    },
-    '1iuyqd9h': {
-      'ru': 'Подтвердить',
-      'en': 'Confirm',
-      'ko': '확인하다',
-    },
-    'hxcno2ba': {
-      'ru': 'Домой',
       'en': 'Home',
       'ko': '집',
     },
@@ -434,7 +421,60 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ko': '집',
     },
   },
-  // UpdateNameOfUser
+  // Registration
+  {
+    'iittegaz': {
+      'ru': 'AutoBuy',
+      'en': '',
+      'ko': '',
+    },
+    '1z1pi32u': {
+      'ru': 'Регистрация',
+      'en': '',
+      'ko': '',
+    },
+    'xg6cwvu6': {
+      'ru': 'Введите ваши данные, чтобы продолжить',
+      'en': '',
+      'ko': '',
+    },
+    'ojzrydxa': {
+      'ru': 'Email',
+      'en': '',
+      'ko': '',
+    },
+    'gqz87rul': {
+      'ru': 'Пароль',
+      'en': '',
+      'ko': '',
+    },
+    'mytj8vvt': {
+      'ru': 'Подтвердите пароль',
+      'en': '',
+      'ko': '',
+    },
+    'pshlpa7o': {
+      'ru': 'Зарегистрироваться',
+      'en': '',
+      'ko': '',
+    },
+    'x9qw21h9': {
+      'ru': 'Уже есть аккаунт? ',
+      'en': '',
+      'ko': '',
+    },
+    'nujahaed': {
+      'ru': 'Войти',
+      'en': '',
+      'ko': '',
+    },
+    '5iy628t0': {
+      'ru': 'Home',
+      'en': 'Home',
+      'ko': '집',
+    },
+  },
+  // ProfileInfo
   {
     '1n0jnsxt': {
       'ru': 'Ваше имя',

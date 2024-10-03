@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class RequestModel extends FlutterFlowModel<RequestWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;

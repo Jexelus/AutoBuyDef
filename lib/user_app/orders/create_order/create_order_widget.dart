@@ -47,7 +47,7 @@ class _CreateOrderWidgetState extends State<CreateOrderWidget> {
     _model.bodycolorTextController ??= TextEditingController();
     _model.bodycolorFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -150,7 +150,7 @@ class _CreateOrderWidgetState extends State<CreateOrderWidget> {
                                                       validateFileFormat(
                                                           m.storagePath,
                                                           context))) {
-                                                setState(() => _model
+                                                safeSetState(() => _model
                                                     .isDataUploading1 = true);
                                                 var selectedUploadedFiles =
                                                     <FFUploadedFile>[];
@@ -209,7 +209,7 @@ class _CreateOrderWidgetState extends State<CreateOrderWidget> {
                                                         selectedMedia.length &&
                                                     downloadUrls.length ==
                                                         selectedMedia.length) {
-                                                  setState(() {
+                                                  safeSetState(() {
                                                     _model.uploadedLocalFiles1 =
                                                         selectedUploadedFiles;
                                                     _model.uploadedFileUrls1 =
@@ -223,7 +223,7 @@ class _CreateOrderWidgetState extends State<CreateOrderWidget> {
                                                         'kxowumi0' /* Успешно */,
                                                       ));
                                                 } else {
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                   showUploadMessage(
                                                       context,
                                                       FFLocalizations.of(
@@ -286,7 +286,7 @@ class _CreateOrderWidgetState extends State<CreateOrderWidget> {
                                                                       selectedMedia.every((m) => validateFileFormat(
                                                                           m.storagePath,
                                                                           context))) {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.isDataUploading2 =
                                                                             true);
                                                                     var selectedUploadedFiles =
@@ -341,7 +341,7 @@ class _CreateOrderWidgetState extends State<CreateOrderWidget> {
                                                                                 .length &&
                                                                         downloadUrls.length ==
                                                                             selectedMedia.length) {
-                                                                      setState(
+                                                                      safeSetState(
                                                                           () {
                                                                         _model.uploadedLocalFiles2 =
                                                                             selectedUploadedFiles;
@@ -355,7 +355,7 @@ class _CreateOrderWidgetState extends State<CreateOrderWidget> {
                                                                             'kxowumi0' /* Успешно */,
                                                                           ));
                                                                     } else {
-                                                                      setState(
+                                                                      safeSetState(
                                                                           () {});
                                                                       showUploadMessage(
                                                                           context,
@@ -694,7 +694,7 @@ class _CreateOrderWidgetState extends State<CreateOrderWidget> {
                                     'vwd1epvv' /* Бензин */,
                                   )
                                 ],
-                                onChanged: (val) => setState(
+                                onChanged: (val) => safeSetState(
                                     () => _model.enginetypeValue = val),
                                 height: 70.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -954,7 +954,7 @@ class _CreateOrderWidgetState extends State<CreateOrderWidget> {
                                     },
                                   );
 
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'tobk6qg4' /* Отправить заявку */,

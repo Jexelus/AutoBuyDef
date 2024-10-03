@@ -51,16 +51,6 @@ class UsersRecord extends FirestoreRecord {
   String get role => _role ?? '';
   bool hasRole() => _role != null;
 
-  // "shortDescription" field.
-  String? _shortDescription;
-  String get shortDescription => _shortDescription ?? '';
-  bool hasShortDescription() => _shortDescription != null;
-
-  // "title" field.
-  String? _title;
-  String get title => _title ?? '';
-  bool hasTitle() => _title != null;
-
   // "chatIds" field.
   List<int>? _chatIds;
   List<int> get chatIds => _chatIds ?? const [];
@@ -84,8 +74,6 @@ class UsersRecord extends FirestoreRecord {
     _phoneNumber = snapshotData['phone_number'] as String?;
     _lastActiveTime = snapshotData['last_active_time'] as DateTime?;
     _role = snapshotData['role'] as String?;
-    _shortDescription = snapshotData['shortDescription'] as String?;
-    _title = snapshotData['title'] as String?;
     _chatIds = getDataList(snapshotData['chatIds']);
     _orderIds = getDataList(snapshotData['orderIds']);
     _uid = snapshotData['uid'] as String?;
@@ -132,8 +120,6 @@ Map<String, dynamic> createUsersRecordData({
   String? phoneNumber,
   DateTime? lastActiveTime,
   String? role,
-  String? shortDescription,
-  String? title,
   String? uid,
 }) {
   final firestoreData = mapToFirestore(
@@ -145,8 +131,6 @@ Map<String, dynamic> createUsersRecordData({
       'phone_number': phoneNumber,
       'last_active_time': lastActiveTime,
       'role': role,
-      'shortDescription': shortDescription,
-      'title': title,
       'uid': uid,
     }.withoutNulls,
   );
@@ -167,8 +151,6 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.phoneNumber == e2?.phoneNumber &&
         e1?.lastActiveTime == e2?.lastActiveTime &&
         e1?.role == e2?.role &&
-        e1?.shortDescription == e2?.shortDescription &&
-        e1?.title == e2?.title &&
         listEquality.equals(e1?.chatIds, e2?.chatIds) &&
         listEquality.equals(e1?.orderIds, e2?.orderIds) &&
         e1?.uid == e2?.uid;
@@ -183,8 +165,6 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.phoneNumber,
         e?.lastActiveTime,
         e?.role,
-        e?.shortDescription,
-        e?.title,
         e?.chatIds,
         e?.orderIds,
         e?.uid

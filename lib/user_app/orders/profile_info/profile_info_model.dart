@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'update_name_of_user_widget.dart' show UpdateNameOfUserWidget;
+import 'profile_info_widget.dart' show ProfileInfoWidget;
 import 'package:flutter/material.dart';
 
-class UpdateNameOfUserModel extends FlutterFlowModel<UpdateNameOfUserWidget> {
+class ProfileInfoModel extends FlutterFlowModel<ProfileInfoWidget> {
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for TextField widget.

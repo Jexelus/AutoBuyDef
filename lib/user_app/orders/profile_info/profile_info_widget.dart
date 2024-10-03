@@ -4,18 +4,18 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'update_name_of_user_model.dart';
-export 'update_name_of_user_model.dart';
+import 'profile_info_model.dart';
+export 'profile_info_model.dart';
 
-class UpdateNameOfUserWidget extends StatefulWidget {
-  const UpdateNameOfUserWidget({super.key});
+class ProfileInfoWidget extends StatefulWidget {
+  const ProfileInfoWidget({super.key});
 
   @override
-  State<UpdateNameOfUserWidget> createState() => _UpdateNameOfUserWidgetState();
+  State<ProfileInfoWidget> createState() => _ProfileInfoWidgetState();
 }
 
-class _UpdateNameOfUserWidgetState extends State<UpdateNameOfUserWidget> {
-  late UpdateNameOfUserModel _model;
+class _ProfileInfoWidgetState extends State<ProfileInfoWidget> {
+  late ProfileInfoModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -26,13 +26,13 @@ class _UpdateNameOfUserWidgetState extends State<UpdateNameOfUserWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => UpdateNameOfUserModel());
+    _model = createModel(context, () => ProfileInfoModel());
 
     _model.textController ??=
         TextEditingController(text: currentUserDisplayName);
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -11,7 +11,6 @@ class CreateOrderModel extends FlutterFlowModel<CreateOrderWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   bool isDataUploading1 = false;
   List<FFUploadedFile> uploadedLocalFiles1 = [];
   List<String> uploadedFileUrls1 = [];

@@ -1,25 +1,23 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'phone_login_model.dart';
-export 'phone_login_model.dart';
+import 'login_model.dart';
+export 'login_model.dart';
 
-class PhoneLoginWidget extends StatefulWidget {
-  const PhoneLoginWidget({super.key});
+class LoginWidget extends StatefulWidget {
+  const LoginWidget({super.key});
 
   @override
-  State<PhoneLoginWidget> createState() => _PhoneLoginWidgetState();
+  State<LoginWidget> createState() => _LoginWidgetState();
 }
 
-class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
+class _LoginWidgetState extends State<LoginWidget>
     with TickerProviderStateMixin {
-  late PhoneLoginModel _model;
+  late LoginModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -28,12 +26,14 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PhoneLoginModel());
+    _model = createModel(context, () => LoginModel());
 
-    _model.phoneNumberTextController ??= TextEditingController();
-    _model.phoneNumberFocusNode ??= FocusNode();
+    _model.userLoginTextController ??= TextEditingController();
+    _model.userLoginFocusNode ??= FocusNode();
 
-    authManager.handlePhoneAuthStateChanges(context);
+    _model.userPassTextController ??= TextEditingController();
+    _model.userPassFocusNode ??= FocusNode();
+
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -64,7 +64,7 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -169,7 +169,7 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          '7oo5161m' /* Вход | Регистрация */,
+                                          '7oo5161m' /* Вход */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
@@ -200,13 +200,13 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
                                         child: SizedBox(
                                           width: double.infinity,
                                           child: TextFormField(
-                                            controller: _model
-                                                .phoneNumberTextController,
+                                            controller:
+                                                _model.userLoginTextController,
                                             focusNode:
-                                                _model.phoneNumberFocusNode,
+                                                _model.userLoginFocusNode,
                                             autofocus: true,
                                             autofillHints: const [
-                                              AutofillHints.telephoneNumber
+                                              AutofillHints.email
                                             ],
                                             textCapitalization:
                                                 TextCapitalization.none,
@@ -217,7 +217,7 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
                                               labelText:
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                'lnca8gc2' /* Номер телефона */,
+                                                'lnca8gc2' /* Email */,
                                               ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
@@ -278,16 +278,124 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
                                                   fontFamily: 'Manrope',
                                                   letterSpacing: 0.0,
                                                 ),
-                                            keyboardType: TextInputType.phone,
                                             cursorColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primary,
                                             validator: _model
-                                                .phoneNumberTextControllerValidator
+                                                .userLoginTextControllerValidator
                                                 .asValidator(context),
-                                            inputFormatters: [
-                                              _model.phoneNumberMask
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 16.0),
+                                        child: SizedBox(
+                                          width: double.infinity,
+                                          child: TextFormField(
+                                            controller:
+                                                _model.userPassTextController,
+                                            focusNode: _model.userPassFocusNode,
+                                            autofocus: true,
+                                            autofillHints: const [
+                                              AutofillHints.password
                                             ],
+                                            textCapitalization:
+                                                TextCapitalization.none,
+                                            textInputAction:
+                                                TextInputAction.send,
+                                            obscureText:
+                                                !_model.userPassVisibility,
+                                            decoration: InputDecoration(
+                                              labelText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'gdytc864' /* Пароль */,
+                                              ),
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              suffixIcon: InkWell(
+                                                onTap: () => safeSetState(
+                                                  () => _model
+                                                          .userPassVisibility =
+                                                      !_model
+                                                          .userPassVisibility,
+                                                ),
+                                                focusNode: FocusNode(
+                                                    skipTraversal: true),
+                                                child: Icon(
+                                                  _model.userPassVisibility
+                                                      ? Icons
+                                                          .visibility_outlined
+                                                      : Icons
+                                                          .visibility_off_outlined,
+                                                  color: const Color(0xFF757575),
+                                                  size: 22.0,
+                                                ),
+                                              ),
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Manrope',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            cursorColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            validator: _model
+                                                .userPassTextControllerValidator
+                                                .asValidator(context),
                                           ),
                                         ),
                                       ),
@@ -300,74 +408,23 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              _model.user =
-                                                  await queryUsersRecordOnce(
-                                                queryBuilder: (usersRecord) =>
-                                                    usersRecord.where(
-                                                  'phone_number',
-                                                  isEqualTo: _model
-                                                      .phoneNumberTextController
-                                                      .text,
-                                                ),
-                                                singleRecord: true,
-                                              ).then((s) => s.firstOrNull);
-                                              if (_model.user != null) {
-                                                context.pushNamed(
-                                                  'PhoneVerify',
-                                                  queryParameters: {
-                                                    'phoneNumber':
-                                                        serializeParam(
-                                                      _model
-                                                          .phoneNumberTextController
-                                                          .text,
-                                                      ParamType.String,
-                                                    ),
-                                                  }.withoutNulls,
-                                                );
-                                              } else {
-                                                final phoneNumberVal = _model
-                                                    .phoneNumberTextController
-                                                    .text;
-                                                if (phoneNumberVal.isEmpty ||
-                                                    !phoneNumberVal
-                                                        .startsWith('+')) {
-                                                  ScaffoldMessenger.of(context)
-                                                      .showSnackBar(
-                                                    SnackBar(
-                                                      content: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                        'g4s1vpu4' /* Введите номер телефона (+) */,
-                                                      )),
-                                                    ),
-                                                  );
-                                                  return;
-                                                }
-                                                await authManager
-                                                    .beginPhoneAuth(
-                                                  context: context,
-                                                  phoneNumber: phoneNumberVal,
-                                                  onCodeSent: (context) async {
-                                                    context.goNamedAuth(
-                                                      'PhoneVerify',
-                                                      context.mounted,
-                                                      queryParameters: {
-                                                        'phoneNumber':
-                                                            serializeParam(
-                                                          _model
-                                                              .phoneNumberTextController
-                                                              .text,
-                                                          ParamType.String,
-                                                        ),
-                                                      }.withoutNulls,
-                                                      ignoreRedirect: true,
-                                                    );
-                                                  },
-                                                );
+                                              GoRouter.of(context)
+                                                  .prepareAuthEvent();
+
+                                              final user = await authManager
+                                                  .signInWithEmail(
+                                                context,
+                                                _model.userLoginTextController
+                                                    .text,
+                                                _model.userPassTextController
+                                                    .text,
+                                              );
+                                              if (user == null) {
+                                                return;
                                               }
 
-                                              setState(() {});
+                                              context.goNamedAuth(
+                                                  'Profile', context.mounted);
                                             },
                                             text: FFLocalizations.of(context)
                                                 .getText(
@@ -399,6 +456,71 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget>
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                             ),
+                                          ),
+                                        ),
+                                      ),
+                                      Divider(
+                                        thickness: 2.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                      ),
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: RichText(
+                                          textScaler:
+                                              MediaQuery.of(context).textScaler,
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '8qlxtc8b' /* Еще нет аккаунта?  */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 16.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                              TextSpan(
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'j4ez3qkb' /* Зарегистрируйтесь */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondary,
+                                                          fontSize: 16.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                              )
+                                            ],
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Manrope',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  fontSize: 16.0,
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ),
