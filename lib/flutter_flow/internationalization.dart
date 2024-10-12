@@ -202,6 +202,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'ko': '',
     },
+    'lrmr1488': {
+      'ru': 'Забыли пароль? ',
+      'en': '',
+      'ko': '',
+    },
+    'aud37nqq': {
+      'ru': 'Восстановить',
+      'en': '',
+      'ko': '',
+    },
     '3i2mmp5d': {
       'ru': 'Home',
       'en': 'Home',
@@ -443,6 +453,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'ko': '',
     },
+    'oyc4p4fy': {
+      'ru': 'Номер телефона',
+      'en': '',
+      'ko': '',
+    },
     'gqz87rul': {
       'ru': 'Пароль',
       'en': '',
@@ -474,12 +489,55 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ko': '집',
     },
   },
+  // ForgotPassword
+  {
+    'r7krnkwg': {
+      'ru': 'AutoBuy',
+      'en': '',
+      'ko': '',
+    },
+    '0mt37nc0': {
+      'ru': 'Восстановление пароля',
+      'en': '',
+      'ko': '',
+    },
+    'b9lbr0jv': {
+      'ru': 'Введите ваши данные, чтобы продолжить',
+      'en': '',
+      'ko': '',
+    },
+    'at3woqhq': {
+      'ru': 'Email',
+      'en': '',
+      'ko': '',
+    },
+    '9dsgfdr4': {
+      'ru': 'Введите ваш email',
+      'en': '',
+      'ko': '',
+    },
+    'obuyahw8': {
+      'ru': 'Продолжить',
+      'en': '',
+      'ko': '',
+    },
+    'hjn9gnqk': {
+      'ru': 'Home',
+      'en': '',
+      'ko': '',
+    },
+  },
   // ProfileInfo
   {
     '1n0jnsxt': {
       'ru': 'Ваше имя',
       'en': 'Your name',
       'ko': '당신의 이름',
+    },
+    'dcfdphq1': {
+      'ru': 'Ваш номер телефона',
+      'en': '',
+      'ko': '',
     },
     'gmosb337': {
       'ru': 'Сохранить',

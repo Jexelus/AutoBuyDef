@@ -247,6 +247,9 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                           child: StreamBuilder<List<ChatMessagesRecord>>(
                             stream: queryChatMessagesRecord(
                               parent: columnChatsRecord?.reference,
+                              queryBuilder: (chatMessagesRecord) =>
+                                  chatMessagesRecord.orderBy('timeStamp',
+                                      descending: true),
                             ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.

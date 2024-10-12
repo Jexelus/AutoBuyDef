@@ -9,6 +9,10 @@ class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
   String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode;
+  TextEditingController? phoneNumberTextController;
+  String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
@@ -31,6 +35,9 @@ class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
   void dispose() {
     emailAddressFocusNode?.dispose();
     emailAddressTextController?.dispose();
+
+    phoneNumberFocusNode?.dispose();
+    phoneNumberTextController?.dispose();
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();

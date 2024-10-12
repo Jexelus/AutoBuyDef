@@ -76,11 +76,6 @@ class OrdersRecord extends FirestoreRecord {
   DocumentReference? get userRefOfCreator => _userRefOfCreator;
   bool hasUserRefOfCreator() => _userRefOfCreator != null;
 
-  // "phoneNumberOfSender" field.
-  String? _phoneNumberOfSender;
-  String get phoneNumberOfSender => _phoneNumberOfSender ?? '';
-  bool hasPhoneNumberOfSender() => _phoneNumberOfSender != null;
-
   void _initializeFields() {
     _userId = snapshotData['userId'] as String?;
     _mileage = castToType<int>(snapshotData['mileage']);
@@ -94,7 +89,6 @@ class OrdersRecord extends FirestoreRecord {
     _photoList = getDataList(snapshotData['photoList']);
     _approved = snapshotData['approved'] as String?;
     _userRefOfCreator = snapshotData['userRefOfCreator'] as DocumentReference?;
-    _phoneNumberOfSender = snapshotData['phoneNumberOfSender'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -142,7 +136,6 @@ Map<String, dynamic> createOrdersRecordData({
   String? orderId,
   String? approved,
   DocumentReference? userRefOfCreator,
-  String? phoneNumberOfSender,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -157,7 +150,6 @@ Map<String, dynamic> createOrdersRecordData({
       'orderId': orderId,
       'approved': approved,
       'userRefOfCreator': userRefOfCreator,
-      'phoneNumberOfSender': phoneNumberOfSender,
     }.withoutNulls,
   );
 
@@ -181,8 +173,7 @@ class OrdersRecordDocumentEquality implements Equality<OrdersRecord> {
         e1?.orderId == e2?.orderId &&
         listEquality.equals(e1?.photoList, e2?.photoList) &&
         e1?.approved == e2?.approved &&
-        e1?.userRefOfCreator == e2?.userRefOfCreator &&
-        e1?.phoneNumberOfSender == e2?.phoneNumberOfSender;
+        e1?.userRefOfCreator == e2?.userRefOfCreator;
   }
 
   @override
@@ -198,8 +189,7 @@ class OrdersRecordDocumentEquality implements Equality<OrdersRecord> {
         e?.orderId,
         e?.photoList,
         e?.approved,
-        e?.userRefOfCreator,
-        e?.phoneNumberOfSender
+        e?.userRefOfCreator
       ]);
 
   @override

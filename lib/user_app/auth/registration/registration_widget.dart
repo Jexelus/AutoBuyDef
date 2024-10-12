@@ -4,9 +4,9 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'registration_model.dart';
 export 'registration_model.dart';
@@ -33,6 +33,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
+
+    _model.phoneNumberTextController ??= TextEditingController();
+    _model.phoneNumberFocusNode ??= FocusNode();
 
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
@@ -287,6 +290,97 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                             validator: _model
                                                 .emailAddressTextControllerValidator
                                                 .asValidator(context),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 16.0),
+                                        child: SizedBox(
+                                          width: double.infinity,
+                                          child: TextFormField(
+                                            controller: _model
+                                                .phoneNumberTextController,
+                                            focusNode:
+                                                _model.phoneNumberFocusNode,
+                                            autofocus: true,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'oyc4p4fy' /* Номер телефона */,
+                                              ),
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Manrope',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            keyboardType: TextInputType.number,
+                                            cursorColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            validator: _model
+                                                .phoneNumberTextControllerValidator
+                                                .asValidator(context),
+                                            inputFormatters: [
+                                              FilteringTextInputFormatter.allow(
+                                                  RegExp('[0-9]'))
+                                            ],
                                           ),
                                         ),
                                       ),
@@ -568,20 +662,19 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                         createUsersRecordData(
                                                       createdTime:
                                                           getCurrentTimestamp,
-                                                      displayName: random_data
-                                                          .randomString(
-                                                        8,
-                                                        12,
-                                                        true,
-                                                        true,
-                                                        true,
-                                                      ),
+                                                      displayName:
+                                                          'Новый пользователь',
                                                       email: _model
                                                           .emailAddressTextController
                                                           .text,
                                                       lastActiveTime:
                                                           getCurrentTimestamp,
                                                       role: 'user',
+                                                      phoneNumber: _model
+                                                          .phoneNumberTextController
+                                                          .text,
+                                                      photoUrl:
+                                                          'https://i.pinimg.com/736x/0c/35/c2/0c35c203e6df376ced710f2fcdaca496.jpg',
                                                     ));
 
                                                 navigate = () =>
@@ -602,15 +695,15 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                       (alertDialogContext) {
                                                     return AlertDialog(
                                                       title: const Text(
-                                                          'Passwords don\'t match'),
+                                                          'Пароли не совпадают '),
                                                       content: const Text(
-                                                          'Passwords don\'t match please feel textfields right'),
+                                                          'Пароли должны совпадать '),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: const Text('Ok'),
+                                                          child: const Text('Ок'),
                                                         ),
                                                       ],
                                                     );
